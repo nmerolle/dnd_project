@@ -1,4 +1,4 @@
-class API 
+class  Dnd5eClassSpells::API 
 
   BASE_URL = "https://www.dnd5eapi.co/api/"
 

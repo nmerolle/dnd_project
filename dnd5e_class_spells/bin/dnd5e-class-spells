@@ -2,4 +2,5 @@
 
 require_relative "../lib/environment"
 
-API.get_classes
+# Dnd5eClassSpells::API.get_classes
+Dnd5eClassSpells::CLI.new.call
