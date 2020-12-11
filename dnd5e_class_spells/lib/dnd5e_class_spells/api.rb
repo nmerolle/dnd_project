@@ -4,6 +4,8 @@ class  Dnd5eClassSpells::API
 
   def self.get_classes
     response = RestClient.get(BASE_URL + "classes")
+    data = JSON.parse(response)
+    klass_data = data["results"]["name"]
     binding.pry
   end
 
