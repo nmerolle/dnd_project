@@ -5,12 +5,15 @@ class  Dnd5eClassSpells::API
   def self.get_klasses
     response = RestClient.get(BASE_URL + "classes")
     data = JSON.parse(response)
-    klass_data = data["results"]
-    klass_data.each_with_index do |klass,index|
-      puts "#{index+1}. #{klass["name"]}"
+    
+    data["results"].each do |klass_data|
+      name = klass_data["name"]
+      Dnd5eClassSpells::Klass.new(name: name)
     end
   end
 
-
+  def self.get_spells
+   
+  end
   
 end
