@@ -1,10 +1,9 @@
 class Dnd5eClassSpells::CLI
 
   def call
-    puts "Welcome to the DnD 5e spell list."
+    puts "\nWelcome to the DnD 5e spell list.\n\n"
     Dnd5eClassSpells::API.get_klasses
-    Dnd5eClassSpells::API.list_klasses
-    puts "\nType in a class to see a list of classes available to that class."
+    puts "\nType in a class to see a list of classes available to that class.\n\n"
     #description
   end
 
