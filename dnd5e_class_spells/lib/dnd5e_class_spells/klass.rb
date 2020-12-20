@@ -17,6 +17,11 @@ class  Dnd5eClassSpells::Klass
     @@all
   end
   
+  def self.list_klasses
+    @@all.each_with_index do |klass, index|
+      puts "#{index+1}. #{klass.name}"
+    end
+  end
   
   
 end
