@@ -13,7 +13,13 @@ class  Dnd5eClassSpells::API
   end
 
   def self.get_spells
-   
+    response = RestClient.get(BASE_URL + "classes")
+    data = JSON.parse(response)
+    
+    data["results"].each do |spell_data|
+      name = spell_data["name"]
+      Dnd5eClassSpells::Spell.new(name: name)
+    end
   end
   
 end
