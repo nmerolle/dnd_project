@@ -1,7 +1,8 @@
 class  Dnd5eClassSpells::API 
 
   BASE_URL = "https://www.dnd5eapi.co/api/"
-
+  SPELL_URL = "https://www.dnd5eapi.co/api/spells"
+  
   def self.get_klasses
     response = RestClient.get(BASE_URL + "classes")
     data = JSON.parse(response)
@@ -12,17 +13,18 @@ class  Dnd5eClassSpells::API
     end
   end
 
-  def self.get_spells
+  def self.get_spell_indices
     response = RestClient.get(BASE_URL + "spells")
     data = JSON.parse(response)
-    
+    @spell_indices = []
     data["results"].each do |spell_data|
-      name = spell_data["name"]
-      Dnd5eClassSpells::Spell.new(name: name)
+      @spell_indices << spell_data["index"]
     end
-    spells = Dnd5eClassSpells::Spell.all
-    
-   
+    binding.pry
   end
   
+
+    
+ 
+
 end
