@@ -16,12 +16,7 @@ class  Dnd5eClassSpells::Spell
   def self.all
     @@all
   end
-  
-  def self.list_spells
-    @@all.each_with_index do |klass, index|
-      puts "#{index+1}. #{klass.name}"
-    end
-  end
+
   
   
     

@@ -9,19 +9,13 @@ class  Dnd5eClassSpells::API
     
     data["results"].each do |klass_data|
       name = klass_data["name"]
-      Dnd5eClassSpells::Klass.new(name: name)
+      klass_index = klass_data["index"]
+      Dnd5eClassSpells::Klass.new(name: name, klass_index: klass_index)
     end
   end
 
-  def self.get_spell_indices
-    response = RestClient.get(BASE_URL + "spells")
-    data = JSON.parse(response)
-    @spell_indices = []
-    data["results"].each do |spell_data|
-      @spell_indices << spell_data["index"]
-    end
-    binding.pry
-  end
+
+
   
 
     

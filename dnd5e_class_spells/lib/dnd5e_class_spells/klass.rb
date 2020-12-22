@@ -1,11 +1,11 @@
 class  Dnd5eClassSpells::Klass
-  
-  attr_accessor :name
+  attr_accessor :name, :klass_index
   
   @@all = []
   
-  def initialize(name:)
+  def initialize(name:, klass_index:)
     self.name = name
+    self.klass_index = klass_index
     self.save
   end
   
@@ -14,6 +14,7 @@ class  Dnd5eClassSpells::Klass
   end
     
   def self.all
+    Dnd5eClassSpells::API.get_klasses if @@all.empty? 
     @@all
   end
   
@@ -22,6 +23,8 @@ class  Dnd5eClassSpells::Klass
       puts "#{index+1}. #{klass.name}"
     end
   end
+  
+  
   
   
 end

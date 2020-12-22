@@ -1,21 +1,15 @@
 class Dnd5eClassSpells::CLI
 
   def call
-    get_spell_indices
-    
+    puts "\nWelcome to the DnD 5e spell list.\n\n" 
     get_klasses
     get_user_klass_input
-    #description
+
   end
 
-  def get_spell_indices
-    Dnd5eClassSpells::API.get_spell_indices
-  end
-  
+ 
   def get_klasses
-    puts "\nWelcome to the DnD 5e spell list.\n\n" 
-    Dnd5eClassSpells::API.get_klasses
-    Dnd5eClassSpells::Klass.list_klasses
+    @klasses = Dnd5eClassSpells::Klass.all
   end
 
   def get_user_klass_input
