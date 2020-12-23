@@ -4,8 +4,9 @@ class  Dnd5eClassSpells::Spell
   
   @@all = []
   
-  def initialize(name:)
+  def initialize(name:, spell_index:)
     self.name = name
+    self.spell_index = spell_index
     self.save
   end
   

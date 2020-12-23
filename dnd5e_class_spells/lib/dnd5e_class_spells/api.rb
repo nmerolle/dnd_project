@@ -14,6 +14,16 @@ class  Dnd5eClassSpells::API
     end
   end
 
+ def self.get_spells(ind)
+    response = RestClient.get(BASE_URL + "classes/#{ind}/spells")
+    data = JSON.parse(response)
+    
+    data["results"].each do |spell_data|
+      name = spell_data["name"]
+      spell_index = spell_data["index"]
+      Dnd5eClassSpells::Spell.new(name: name, spell_index: spell_index)
+    end
+  end
 
 
   
