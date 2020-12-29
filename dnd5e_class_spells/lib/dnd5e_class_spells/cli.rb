@@ -2,12 +2,17 @@ class Dnd5eClassSpells::CLI
 
   def call
     puts "\nWelcome to the DnD 5e spell list.\n\n" 
-    get_klasses
-    list(@klasses)
-    get_user_input(@klasses)
-    get_spells
-    list(@spells)
-    get_user_spell_input(@spells)
+    @input = ""
+    until @input == "exit"
+      get_klasses
+      list(@klasses)
+      get_user_input(@klasses)
+      get_spells
+      list(@spells)
+      get_user_spell_input(@spells)
+      what_next
+    end
+    goodbye
   end
 
   def get_klasses
@@ -15,6 +20,7 @@ class Dnd5eClassSpells::CLI
   end
   
   def get_spells
+    
     @spells = Dnd5eClassSpells::Spell.all
     
     if @spells.empty?
@@ -69,6 +75,16 @@ class Dnd5eClassSpells::CLI
     spell = @spells[spell_int -1]
     Dnd5eClassSpells::API.get_spell_desc(spell.spell_index)
   end
+  
+  def what_next
+    puts "\nAre you done? Type 'exit' to exit or hit any key to see more events."
+    @input = gets.strip
+  end
+  
+  def goodbye
+    puts "\nGoodbye!!!\n"
+  end
+  
 end
 
 
