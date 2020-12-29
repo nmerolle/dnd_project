@@ -32,10 +32,4 @@ class  Dnd5eClassSpells::API
     puts "#{data["desc"]}"
   end
 
-
-  
-
-    
- 
-
 end
