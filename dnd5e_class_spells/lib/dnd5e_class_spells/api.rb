@@ -1,7 +1,7 @@
 class  Dnd5eClassSpells::API 
 
   BASE_URL = "https://www.dnd5eapi.co/api/"
-  SPELL_URL = "https://www.dnd5eapi.co/api/spells"
+  SPELL_URL = "https://www.dnd5eapi.co/api/spells/"
   
   def self.get_klasses
     response = RestClient.get(BASE_URL + "classes")
@@ -25,7 +25,12 @@ class  Dnd5eClassSpells::API
     end
   end
   
-
+   def self.get_spell_desc(ind)
+    response = RestClient.get(SPELL_URL + "#{ind}")
+    data = JSON.parse(response)
+    puts "\n                           #{data["name"]}\n\n"
+    puts "#{data["desc"]}"
+  end
 
 
   

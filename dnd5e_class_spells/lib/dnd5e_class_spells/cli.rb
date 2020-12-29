@@ -56,21 +56,21 @@ class Dnd5eClassSpells::CLI
     puts "\nEnter the index for a spell to see a description.\n\n"
     user_spell_input = gets.strip
     if valid_input(user_spell_input, data)
-      #get_spell_info(user_spell_input)
-      puts "SPELL DESC"
+      get_spell_info(user_spell_input)
+      
     else
       puts "\n\nPlease enter a valid index!!"
       get_user_spell_input(data)
     end
   end
   
-  def get_spell_info
-    spell_int = user_input.to_i
+  def get_spell_info(user_spell_input)
+    spell_int = user_spell_input.to_i
     spell = @spells[spell_int -1]
-    Dnd5eClassSpells::API.get_spell_desc(klass.klass_index)
-  end
+    Dnd5eClassSpells::API.get_spell_desc(spell.spell_index)
   end
 end
+
 
 
  
