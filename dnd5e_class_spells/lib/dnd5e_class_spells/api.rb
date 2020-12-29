@@ -24,6 +24,8 @@ class  Dnd5eClassSpells::API
       Dnd5eClassSpells::Spell.new(name: name, spell_index: spell_index)
     end
   end
+  
+
 
 
   
