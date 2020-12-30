@@ -77,7 +77,8 @@ class Dnd5eClassSpells::CLI
   end
   
   def what_next
-    puts "\nAre you done? Type 'exit' to exit or hit any key to see more events."
+    @spells.clear
+    puts "\nAre you done? Type 'exit' to exit or hit any key to see more spells."
     @input = gets.strip
   end
   
