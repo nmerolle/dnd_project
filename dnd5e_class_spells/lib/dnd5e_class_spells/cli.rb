@@ -58,7 +58,6 @@ class Dnd5eClassSpells::CLI
     Dnd5eClassSpells::API.get_spells(klass.klass_index)
   end
   
- 
   def get_user_spell_input(data)
     puts "\nEnter the index for a spell to see a description.\n\n"
     user_spell_input = gets.strip

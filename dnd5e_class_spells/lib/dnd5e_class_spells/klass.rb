@@ -18,10 +18,5 @@ class  Dnd5eClassSpells::Klass
     Dnd5eClassSpells::API.get_klasses if @@all.empty? 
     @@all
   end
-  
  
-  
-  
-  
-  
 end

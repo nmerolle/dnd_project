@@ -3,8 +3,7 @@ class  Dnd5eClassSpells::Spell
   attr_accessor :name, :desc, :spell_index 
   
   @@all = []
-  
-  
+
   def initialize(name:, spell_index:)
     self.name = name
     self.spell_index = spell_index
@@ -19,8 +18,4 @@ class  Dnd5eClassSpells::Spell
     @@all
   end
 
-  
-  
-    
-  
 end
