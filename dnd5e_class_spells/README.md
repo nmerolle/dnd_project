@@ -1,8 +1,6 @@
 # Dnd5eClassSpells
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dnd5e_class_spells`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The DnD5eClassSpells gem will allow you to connect to the DnD 5e API and search through the spells available to each class in Dungeons and Dragons 5th Edition.
 
 ## Installation
 

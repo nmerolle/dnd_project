@@ -54,6 +54,7 @@ class Dnd5eClassSpells::CLI
   def get_klass_spells(user_input)
     klass_int = user_input.to_i
     klass = @klasses[klass_int -1]
+    puts "\n\n#{klass.name} Spells\n\n"
     Dnd5eClassSpells::API.get_spells(klass.klass_index)
   end
   

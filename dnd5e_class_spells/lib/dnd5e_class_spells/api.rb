@@ -29,7 +29,7 @@ class  Dnd5eClassSpells::API
     response = RestClient.get(SPELL_URL + "#{ind}")
     data = JSON.parse(response)
     puts "\n                           #{data["name"]}\n\n"
-    puts "#{data["desc"]}"
+    puts "#{data["desc"].join}"
   end
 
 end
